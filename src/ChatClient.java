@@ -81,7 +81,7 @@ public class ChatClient {
 		frame.getContentPane().add(button, BorderLayout.PAGE_END);
 		frame.pack();
 
-		// TODO: You may have to edit this event handler to handle point to point
+		// handling point to point
 		// messaging,
 		// where one client can send a message to a specific client. You can add some
 		// header to
@@ -151,7 +151,7 @@ public class ChatClient {
 
 		// Process all messages from server, according to the protocol.
 
-		// TODO: You may have to extend this protocol to achieve task 9 in the lab sheet
+	
 		while (true) {
 
 			String line = in.readLine();
