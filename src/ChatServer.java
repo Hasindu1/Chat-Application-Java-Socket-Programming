@@ -124,8 +124,7 @@ public class ChatServer {
 						return;
 					}
 
-					// TODO: Add code to ensure the thread safety of the
-					// the shared variable 'names'
+					'
 					synchronized (names) {
 						if (!names.contains(name)) {
 							names.add(name);
@@ -143,8 +142,6 @@ public class ChatServer {
 					pointTopoint.put(name, socket);
 				}
 
-				// TODO: You may have to add some code here to broadcast all clients the new
-				// client's name for the task 9 on the lab sheet.
 
 				// Accept messages from this client and broadcast them.
 				// Ignore other clients that cannot be broadcasted to.
@@ -177,7 +174,7 @@ public class ChatServer {
 						}
 					}
 
-					// TODO: Adsd code to send a mesage to a specific client and not
+					// sending a mesage to a specific client and not
 					// all clients. You may have to use a HashMap to store the sockets along
 					// with the chat client names
 
@@ -252,7 +249,7 @@ public class ChatServer {
 				}
 
 			}
-			// TODO: Handle the SocketException here to handle a client closing the socket
+			// Handling the SocketException here to handle a client closing the socket
 			catch (SocketException e) {
 				System.out.println(name + "is going down");
 
