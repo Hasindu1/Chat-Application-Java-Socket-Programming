@@ -1,4 +1,4 @@
-# :email: Chat-Application-Java-Socket-Programming
+# 📲: Chat-Application-Java-Socket-Programming
 
 ## Introduction
 
