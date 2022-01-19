@@ -125,7 +125,7 @@ public class ChatServer {
 					}
 
 					'
-					synchronized (names) {
+					synchronized (ChatServer.class) {
 						if (!names.contains(name)) {
 							names.add(name);
 							break;
@@ -137,7 +137,7 @@ public class ChatServer {
 				// socket's print writer to the set of all writers so
 				// this client can receive broadcast messages.
 				out.println("NAMEACCEPTED");
-				synchronized (this) {
+				synchronized (ChatServer.class) {
 					writers.add(out);
 					pointTopoint.put(name, socket);
 				}
@@ -150,7 +150,7 @@ public class ChatServer {
 					// Sending the logged in user names to client side jList(To all clients)
 					for (PrintWriter writer : writers) {
 						for (String temp : names) {
-							synchronized (this) {
+							synchronized (ChatServer.class) {
 
 								writer.println("USERS" + temp);
 
@@ -213,7 +213,7 @@ public class ChatServer {
 							String input2 = in.readLine();
 							// Adding the multicast users to the Hash set
 							if (!(input2.equals("END"))) {
-								synchronized (this) {
+								synchronized (ChatServer.class) {
 									multiCast.add(input2);
 								}
 
@@ -261,7 +261,7 @@ public class ChatServer {
 
 				// Removing the user from other clients JLists
 				for (PrintWriter writer : writers) {
-					synchronized (this) {
+					synchronized (ChatServer.class) {
 						writer.println("RemoveUsers" + name);
 
 					}
